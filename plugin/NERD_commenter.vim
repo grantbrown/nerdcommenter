@@ -306,7 +306,7 @@ let s:delimiterMap = {
     \ 'python': { 'left': '# ', 'leftAlt': '#' },
     \ 'radiance': { 'left': '#' },
     \ 'ratpoison': { 'left': '#' },
-    \ 'r': { 'left': '#' },
+    \ 'r': { 'left': '#', 'leftAlt': "#'"},
     \ 'rc': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
     \ 'rebol': { 'left': ';' },
     \ 'registry': { 'left': ';' },
