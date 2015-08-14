@@ -1571,11 +1571,6 @@ endfunction
 function s:CanCommentLine(forceNested, lineNum)
     let theLine = getline(a:lineNum)
 
-    " make sure we don't comment lines that are just spaces or tabs or empty.
-    if theLine =~ "^[ \t]*$"
-        return 0
-    endif
-
     "if the line is part of a sexy comment then just flag it...
     if s:IsInSexyComment(a:lineNum)
         return 0
@@ -1629,11 +1624,6 @@ endfunction
 function s:CanToggleCommentLine(forceNested, lineNum)
     let theLine = getline(a:lineNum)
     if (s:IsCommentedFromStartOfLine(s:Left(), theLine) || s:IsCommentedFromStartOfLine(s:Left({'alt': 1}), theLine)) && !a:forceNested
-        return 0
-    endif
-
-    " make sure we don't comment lines that are just spaces or tabs or empty.
-    if theLine =~ "^[ \t]*$"
         return 0
     endif
 
